@@ -21,7 +21,7 @@ The application supports both **data ingestion** from external sources and **sea
 
 - Python 3.12+
 - PostgreSQL 15+
-- Docker & Docker Compose (recommended)
+- Docker Compose
 
 ---
 
