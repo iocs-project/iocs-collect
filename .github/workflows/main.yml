@@ -1,0 +1,41 @@
+name: iocs-collecting
+
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Lint with flake8
+        run: flake8 . --max-line-length 120
+
+      - name: Check formatting with black
+        run: black --check . --line-length 120
+
+      - name: Check imports with isort
+        run: isort --check-only .
+      
+      - name: Type check with mypy
+        run: mypy .
+      
+      - name: Check security issues
+        run: bandit .
+
+      - name: Pytest
+        run: pytest -v
+
+      - name: Test coverage
+        run: pytest --cov=./ --cov-report=term-missing
