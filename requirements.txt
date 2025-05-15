@@ -1,0 +1,14 @@
+InquirerPy
+polars
+requests
+pytest
+pytest-cov
+flake8
+black
+isort
+bandit
+mypy
+psycopg2
+types-psycopg2
+types-requests
+git+https://github.com/SecurityChecker/db-utils.git
