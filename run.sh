@@ -16,10 +16,10 @@ if [ ! -d "venv" ]; then
   python3 -m venv venv
 fi
 
-# 2. Aktivuj venv
+# 3. Aktivuj venv
 source venv/bin/activate
 
-# 3. Nainstaluj dependencies
+# 4. Nainstaluj dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
 
